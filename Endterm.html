@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio - Web Designer</title>
+  <link rel="stylesheet" type="text/css" href="istyle.css" />
+</head>
+<body>
+
+<header>
+  <h1>Joy Time</h1>
+  <p>Web Designer</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#css">CSS</a>
+  <a href="#svg">SVG</a>
+  <a href="#canvas">Canvas</a>
+  <a href="#about">About the Author</a>
+</nav>
+
+<section id="home">
+  <div>
+    <h2>Welcome to My Portfolio</h2>
+    <p>Explore my work and projects in web design and development. The home page serves as a gateway to the creative world I've crafted through CSS, SVG, and Canvas animations. 
+    Engage with the visually captivating designs and discover how each element comes to life, 
+    reflecting my passion for bringing innovative and user-friendly experiences to the digital landscape.</p>
+  </div>
+  <div id="animation-container">
+    <canvas id="canvasAnimation" width="100" height="100"></canvas>
+    <!-- You can add more animations or graphics here -->
+  </div>
+</section>
+
+<section id="css">
+    <h2>CSS Showcase</h2>
+    <p>Dive into the world of cascading style sheets (CSS) where I showcase my expertise in creating visually stunning and responsive designs. From fluid layouts to intricate animations, each project within this section demonstrates my mastery in utilizing CSS properties and techniques to enhance the aesthetics and functionality of websites. Explore the dynamic possibilities of CSS and witness how it contributes to the overall user experience.</p>
+  </section>
+  
+
+  <section id="svg">
+    <h2>SVG Showcase</h2>
+    <p>Discover the versatility and scalability of Scalable Vector Graphics (SVG) in this section. SVG has been a canvas for my creativity, allowing me to craft intricate and resizable visuals. From animated logos to interactive graphics, each piece within this showcase exemplifies the power of SVG in creating visually appealing and resolution-independent designs. Explore the intersection of art and technology as I leverage SVG for captivating user interfaces.</p>
+  </section>
+  
+  <section id="canvas">
+    <h2>Canvas Showcase</h2>
+    <p>Embark on a journey through the dynamic world of HTML5 Canvas animations. In this section, witness how I harness the Canvas element to breathe life into web pages. From interactive games to real-time visualizations, each canvas project showcases my proficiency in leveraging JavaScript to create engaging and immersive experiences. Experience the fusion of code and creativity as I push the boundaries of what's possible with Canvas animations.</p>
+  </section>
+  
+
+<section id="about">
+    <h2>About the Author</h2>
+    <p>Welcome to my creative corner of the web! I'm Apple Joy Montebon, a passionate web designer with a keen interest in the captivating world of web animation. With a background in IT and a love for artistic expression, I specialize in crafting visually appealing and interactive online experiences through the power of animation.
+  
+    Over the course of my journey in web design and development, I've delved into the nuances of CSS animations, SVG animations, and Canvas animations. Each project serves as a canvas for me to blend technical expertise with a touch of creativity, bringing websites to life with smooth transitions, engaging effects, and user-friendly interfaces.
+  
+    Whether it's a subtle hover effect or a complex sequence of animated elements, I believe that web animation adds an extra layer of charm and interactivity to digital spaces. My commitment to delivering aesthetically pleasing and functional designs is evident in the showcase of CSS, SVG, and Canvas creations within this portfolio.
+  
+    As I continue to explore new horizons in the ever-evolving realm of web animation, I am excited about the prospect of transforming ideas into visually stunning realities. Join me on this journey, and let's make the web a more dynamic and enjoyable place for everyone.</p>
+  </section>
+  
+
+<script>
+  // Example Canvas Animation
+  var canvas = document.getElementById('canvasAnimation');
+  var ctx = canvas.getContext('2d');
+
+  function drawCircle(x, y, radius) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#ffaa77';
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  var x = 50;
+  var y = 50;
+  var radius = 20;
+  var speed = 2;
+
+  function animate() {
+    x += speed;
+    if (x + radius > canvas.width || x - radius < 0) {
+      speed = -speed; // Reverse direction on reaching canvas edges
+    }
+    drawCircle(x, y, radius);
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+</body>
+</html>
